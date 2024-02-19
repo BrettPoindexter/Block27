@@ -33,12 +33,12 @@ export default function SignUpForm({ setToken }) {
             {error && <p>{error}</p>}
             <form onSubmit={handleSubmit}>
                 <label>
-                    Username: <input type='text' required='required' value={username} onChange={(e) => setUsername(e.target.value)} />
+                    Username: <input type='text' required='required' minLength='5' maxLength='20' value={username} onChange={(e) => setUsername(e.target.value)} />
                 </label>
                 <label>
-                    Password: <input type='password' required='required' value={password} onChange={(e) => setPassword(e.target.value)} />
+                    Password: <input type='password' required='required' minLength='8' maxLength='20' value={password} onChange={(e) => setPassword(e.target.value)} />
                 </label>
-                <button type='submit'>Submit!</button>
+                <button id='submit-button' type='submit'>Submit!</button>
                 {success && <p>{success}</p>}
             </form>
         </>
